@@ -6,7 +6,7 @@ This is a simple calendar application built with Nextjs and FullCalendar. It all
 
 ### DEMO
 
-[![Timebox App Screenshot](/my-app/app/assets/Screenshot%20(78).png)](https://linktree-clone-link-hub.vercel.app/)
+[![Timebox App Screenshot](/app/assets/Screenshot%20(78).png)](https://linktree-clone-link-hub.vercel.app/)
 
 Check out our [live demo](https://linktree-clone-link-hub.vercel.app/).
 
