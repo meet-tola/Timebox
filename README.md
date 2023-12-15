@@ -3,7 +3,6 @@
 
 This is a simple calendar application built with Nextjs and FullCalendar. It allows users to manage tasks, drag and drop events, and receive notifications for upcoming and missed tasks.
 
-
 ### DEMO
 
 [![Timebox App Screenshot](/app/assets/Screenshot%20(78).png)](https://linktree-clone-link-hub.vercel.app/)
