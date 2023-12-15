@@ -62,15 +62,21 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const storeEvents = JSON.parse(
-      localStorage.getItem("calendarEvents") || "[]"
-    );
-    console.log("Loaded events:", storeEvents);
-    setAllEvents(storeEvents);
+    // Check if localStorage is available before using it
+    if (typeof window !== "undefined") {
+      const storeEvents = JSON.parse(
+        localStorage.getItem("calendarEvents") || "[]"
+      );
+      console.log("Loaded events:", storeEvents);
+      setAllEvents(storeEvents);
+    }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("calendarEvents", JSON.stringify(allEvents));
+    // Check if localStorage is available before using it
+    if (typeof window !== "undefined") {
+      localStorage.setItem("calendarEvents", JSON.stringify(allEvents));
+    }
   }, [allEvents]);
 
   function handleDateClick(arg: { date: Date; allDay: boolean }) {
@@ -139,21 +145,25 @@ export default function Home() {
   }
 
   useEffect(() => {
-    const currentEvents = allEvents.filter(
-      (event) => new Date(event.start).getTime() > Date.now()
-    );
+    // Check if notifications and Notification are supported
+    if (typeof window !== "undefined" && "Notification" in window) {
+      const currentEvents = allEvents.filter(
+        (event) => new Date(event.start).getTime() > Date.now()
+      );
 
-    currentEvents.forEach((event) => {
-      const notificationTime = new Date(event.start).getTime() - Date.now();
+      currentEvents.forEach((event) => {
+        const notificationTime =
+          new Date(event.start).getTime() - Date.now();
 
-      if (notificationTime > 0) {
-        setTimeout(() => {
+        if (notificationTime > 0) {
+          setTimeout(() => {
+            showNotification(event);
+          }, notificationTime);
+        } else {
           showNotification(event);
-        }, notificationTime);
-      } else {
-        showNotification(event);
-      }
-    });
+        }
+      });
+    }
   }, [allEvents]);
 
   useEffect(() => {
