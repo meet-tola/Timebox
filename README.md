@@ -55,7 +55,7 @@ Check out our [live demo](https://linktree-clone-link-hub.vercel.app/).
 - [React](https://react.org/) - React framework for building server-side rendered and static web applications.
 - [Next.js](https://next.org/) - JavaScript library for building user interfaces.
 - [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework for designing user interfaces.
-- [Headless UI](https://headlessui.com) - Collection of fully accessible UI components for React applications.
+- [Headless UI](https://headlessui.dev) - Collection of fully accessible UI components for React applications.
 
  ## Contributing
 
